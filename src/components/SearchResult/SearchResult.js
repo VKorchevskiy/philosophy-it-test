@@ -1,5 +1,5 @@
 import "./SearchResult.css";
-import React, { useEffect } from "react";
+import React from "react";
 
 function SearchResult({ className, questions, getAnswers }) {
 
