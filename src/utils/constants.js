@@ -4,6 +4,12 @@ export const optionsStackExchangeApi = {
   site: "stackoverflow",
 };
 
+export const path = {
+  main: '/',
+  searchResult: '/search-result',
+  answers: '/answers',
+}
+
 export const headers = {
   "Accept": "application/json",
   "Content-Type": "application/json",

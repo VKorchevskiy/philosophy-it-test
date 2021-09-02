@@ -16,9 +16,18 @@ class StackExchangeApi {
       }
     ).then(checkResponse);
 
-  getAnswers = (userId) =>
+  getUserQuestions = (userId) =>
     fetch(
-      `${this.baseUrl}/2.3/users/${userId}/answers?key=${optionsStackExchangeApi.key}&order=desc&sort=votes&site=${optionsStackExchangeApi.site}`,
+      `${this.baseUrl}/2.3/users/${userId}/questions?key=${optionsStackExchangeApi.key}&order=desc&sort=votes&site=${optionsStackExchangeApi.site}`,
+      {
+        headers: { ...this.headers },
+        method: "GET",
+      }
+    ).then(checkResponse);
+
+  getAnswers = (questionId) =>
+    fetch(
+      `${this.baseUrl}/2.3/questions/${questionId}/answers?key=${optionsStackExchangeApi.key}&site=${optionsStackExchangeApi.site}`,
       {
         headers: { ...this.headers },
         method: "GET",
@@ -27,7 +36,7 @@ class StackExchangeApi {
 
   getFaq = (tag) =>
     fetch(
-      `${this.baseUrl}/2.3/tags/${tag}/faq?key=${optionsStackExchangeApi.key}&site=${optionsStackExchangeApi.site}`,
+      `${this.baseUrl}/2.3/tags/${tag}/faq?key=${optionsStackExchangeApi.key}&order=desc&sort=votes&site=${optionsStackExchangeApi.site}`,
       {
         headers: { ...this.headers },
         method: "GET",
