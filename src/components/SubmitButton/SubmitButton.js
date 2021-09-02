@@ -1,7 +1,7 @@
 import "./SubmitButton.css";
 import React from "react";
 
-function SubmitButton({ className, type, name, value, isValid, onClick }) {
+function SubmitButton({ className, type, name, value, isValid }) {
   return (
     <input
       className={`submit-button ${className}`.trim()}
