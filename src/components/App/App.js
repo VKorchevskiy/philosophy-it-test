@@ -12,6 +12,7 @@ function App() {
   const history = useHistory();
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
+  const [faq, setFaq] = useState([]);
 
   const searchQuestion = (search) =>
     stackExchangeApi
@@ -25,7 +26,21 @@ function App() {
   const getAnswers = (userId) =>
     stackExchangeApi
       .getAnswers(userId)
-      .then((res) => setAnswers(res))
+      .then((res) => {
+        setAnswers(res);
+        setFaq([]);
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+
+  const getFaq = (tag) =>
+    stackExchangeApi
+      .getFaq(tag)
+      .then((res) => {
+        setFaq(res);
+        setAnswers([]);
+        console.log(res);
+      })
       .catch((err) => console.log(err));
 
   return (
@@ -34,7 +49,7 @@ function App() {
         <SearchForm className="app__search-form" onSubmit={searchQuestion} />
       </Route>
       <Route path="/result">
-        <SearchResult questions={questions} getAnswers={getAnswers} />
+        <SearchResult questions={questions} getAnswers={getAnswers} getFaq={getFaq} />
       </Route>
       <Route path="/info">inf</Route>
     </Switch>

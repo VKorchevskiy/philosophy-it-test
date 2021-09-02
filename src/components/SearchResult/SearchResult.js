@@ -1,7 +1,7 @@
 import "./SearchResult.css";
 import React from "react";
 
-function SearchResult({ className, questions, getAnswers }) {
+function SearchResult({ className, questions, getAnswers, getFaq }) {
 
   return (
     <table className={`search-result ${className}`.trim()}>
@@ -16,7 +16,7 @@ function SearchResult({ className, questions, getAnswers }) {
           <td>{`(${question.answer_count}): ${question.title}`}</td>
           <td>
             {question.tags.map((tag) => (
-              <span key={tag}>{tag}</span>
+              <span key={tag} onClick={() => getFaq(tag)}>{tag}</span>
             ))}
           </td>
         </tr>

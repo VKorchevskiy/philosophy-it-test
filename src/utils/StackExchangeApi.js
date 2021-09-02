@@ -14,9 +14,7 @@ class StackExchangeApi {
         headers: { ...this.headers },
         method: "GET",
       }
-    )
-      .then(checkResponse)
-      .catch((err) => console.log(err));
+    ).then(checkResponse);
 
   getAnswers = (userId) =>
     fetch(
@@ -25,9 +23,16 @@ class StackExchangeApi {
         headers: { ...this.headers },
         method: "GET",
       }
-    )
-      .then(checkResponse)
-      .catch((err) => console.log(err));
+    ).then(checkResponse);
+
+  getFaq = (tag) =>
+    fetch(
+      `${this.baseUrl}/2.3/tags/${tag}/faq?key=${optionsStackExchangeApi.key}&site=${optionsStackExchangeApi.site}`,
+      {
+        headers: { ...this.headers },
+        method: "GET",
+      }
+    ).then(checkResponse);
 }
 
 export const stackExchangeApi = new StackExchangeApi(
