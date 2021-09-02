@@ -1,12 +1,12 @@
 export const optionsStackExchangeApi = {
-	baseUrl: 'https://api.stackexchange.com',
-	key: 'vOpRnJ2qtlwg3GMo1Glf*g((',
-  site: 'stackoverflow',
+  baseUrl: "https://api.stackexchange.com",
+  key: "vOpRnJ2qtlwg3GMo1Glf*g((",
+  site: "stackoverflow",
 };
 
 export const headers = {
-	'Accept': 'application/json',
-	'Content-Type': 'application/json',
+  "Accept": "application/json",
+  "Content-Type": "application/json",
 };
 
-export const SEARCH_ERROR="Поле не должно быть пустым";
+export const SEARCH_ERROR = "Поле не должно быть пустым";
