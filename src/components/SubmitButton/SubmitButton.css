@@ -1,0 +1,28 @@
+.submit-button {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.submit-button {
+    cursor: pointer;
+    background-color: #225695;
+    transition: opacity 0.3s linear 0s;
+}
+
+.submit-button:hover {
+    opacity: 0.7;
+}
+
+.submit-button:hover:active {
+    background-color: #15355c;
+}
+
+.submit-button:disabled {
+    background-color: gray;
+}
+
+.submit-button:disabled:hover {
+    opacity: 1;
+    cursor: default;
+}

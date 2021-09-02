@@ -7,9 +7,9 @@ class StackExchangeApi {
     this.headers = headers;
   }
 
-  getQuestions = () =>
+  getQuestions = (search) =>
     fetch(
-      `${this.baseUrl}/2.3/search?key=${optionsStackExchangeApi.key}&intitle=stackexchange-api&site=${optionsStackExchangeApi.site}`,
+      `${this.baseUrl}/2.3/search?key=${optionsStackExchangeApi.key}&intitle=${search}&site=${optionsStackExchangeApi.site}`,
       {
         headers: { ...this.headers },
         method: "GET",

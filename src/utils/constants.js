@@ -8,3 +8,5 @@ export const headers = {
 	'Accept': 'application/json',
 	'Content-Type': 'application/json',
 };
+
+export const SEARCH_ERROR="Поле не должно быть пустым";
