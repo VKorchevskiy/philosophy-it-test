@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 function App() {
   const history = useHistory();
   const [questions, setQuestions] = useState([]);
+  const [answers, setAnswers] = useState([]);
 
   const searchQuestion = (search) =>
     stackExchangeApi
@@ -21,13 +22,19 @@ function App() {
       })
       .catch((err) => console.log(err));
 
+  const getAnswers = (userId) =>
+    stackExchangeApi
+      .getAnswers(userId)
+      .then((res) => setAnswers(res))
+      .catch((err) => console.log(err));
+
   return (
     <Switch>
       <Route path="/" exact>
         <SearchForm className="app__search-form" onSubmit={searchQuestion} />
       </Route>
       <Route path="/result">
-        <SearchResult questions={questions} />
+        <SearchResult questions={questions} getAnswers={getAnswers} />
       </Route>
       <Route path="/info">inf</Route>
     </Switch>

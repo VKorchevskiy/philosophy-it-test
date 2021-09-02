@@ -17,6 +17,17 @@ class StackExchangeApi {
     )
       .then(checkResponse)
       .catch((err) => console.log(err));
+
+  getAnswers = (userId) =>
+    fetch(
+      `${this.baseUrl}/2.3/users/${userId}/answers?key=${optionsStackExchangeApi.key}&order=desc&sort=votes&site=${optionsStackExchangeApi.site}`,
+      {
+        headers: { ...this.headers },
+        method: "GET",
+      }
+    )
+      .then(checkResponse)
+      .catch((err) => console.log(err));
 }
 
 export const stackExchangeApi = new StackExchangeApi(

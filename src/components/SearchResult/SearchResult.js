@@ -1,7 +1,8 @@
 import "./SearchResult.css";
-import React from "react";
+import React, { useEffect } from "react";
 
-function SearchResult({ className, questions }) {
+function SearchResult({ className, questions, getAnswers }) {
+
   return (
     <table className={`search-result ${className}`.trim()}>
       <tr>
@@ -11,8 +12,8 @@ function SearchResult({ className, questions }) {
       </tr>
       {questions.map((question) => (
         <tr key={question.question_id}>
-          <td>{question.owner.display_name}</td>
-          <td>{`${question.title} (${question.answer_count})`}</td>
+          <td onClick={() => getAnswers(question.owner.user_id)}>{question.owner.display_name}</td>
+          <td>{`(${question.answer_count}): ${question.title}`}</td>
           <td>
             {question.tags.map((tag) => (
               <span key={tag}>{tag}</span>
