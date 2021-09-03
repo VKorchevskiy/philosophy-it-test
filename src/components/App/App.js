@@ -6,18 +6,16 @@ import { stackExchangeApi } from "../../utils/StackExchangeApi";
 import { path } from "../../utils/constants";
 
 import SearchForm from "../SearchForm/SearchForm";
-import SearchResult from "../SearchResult/SearchResult";
 import QuestionInfo from "../QuestionInfo/QuestionInfo";
-import { useEffect, useState } from "react";
+import ResultWindow from "../ResultWindow/ResultWindow";
+import { useState } from "react";
 
 function App() {
   const history = useHistory();
   const [questions, setQuestions] = useState([]);
   const [question, setQuestion] = useState("");
-  const [userQwestions, setUserQwestions] = useState([]);
   const [answers, setAnswers] = useState([]);
-  const [faq, setFaq] = useState([]);
-  const [questionInfo, setQuestionInfo] = useState([]);
+  const [previewInfo, setPreviewInfo] = useState([]);
 
   const searchQuestion = (search) =>
     stackExchangeApi
@@ -32,8 +30,7 @@ function App() {
     stackExchangeApi
       .getUserQuestions(userId)
       .then((res) => {
-        setUserQwestions(res);
-        setFaq([]);
+        setPreviewInfo(res)
         console.log(res);
       })
       .catch((err) => console.log(err));
@@ -53,8 +50,7 @@ function App() {
     stackExchangeApi
       .getFaq(tag)
       .then((res) => {
-        setFaq(res);
-        setUserQwestions([]);
+        setPreviewInfo(res)
         console.log(res);
       })
       .catch((err) => console.log(err));
@@ -65,12 +61,13 @@ function App() {
         <SearchForm className="app__search-form" onSubmit={searchQuestion} />
       </Route>
       <Route path={path.searchResult}>
-        <SearchResult
-          className="app__search-result"
+        <ResultWindow
+          className="app__result-window"
           questions={questions}
           getUserQuestions={getUserQuestions}
           getAnswers={getAnswers}
           getFaq={getFaq}
+          previewInfo={previewInfo.items}
         />
       </Route>
       <Route path={path.answers}>
