@@ -7,14 +7,17 @@ import { path } from "../../utils/constants";
 
 import SearchForm from "../SearchForm/SearchForm";
 import SearchResult from "../SearchResult/SearchResult";
+import QuestionInfo from "../QuestionInfo/QuestionInfo";
 import { useEffect, useState } from "react";
 
 function App() {
   const history = useHistory();
   const [questions, setQuestions] = useState([]);
+  const [question, setQuestion] = useState("");
   const [userQwestions, setUserQwestions] = useState([]);
   const [answers, setAnswers] = useState([]);
   const [faq, setFaq] = useState([]);
+  const [questionInfo, setQuestionInfo] = useState([]);
 
   const searchQuestion = (search) =>
     stackExchangeApi
@@ -35,12 +38,13 @@ function App() {
       })
       .catch((err) => console.log(err));
 
-  const getAnswers = (questionId) =>
+  const getAnswers = ({ question, questionId }) =>
     stackExchangeApi
       .getAnswers(questionId)
       .then((res) => {
-        history.push(path.answers);
         setAnswers(res);
+        setQuestion(question);
+        history.push(path.answers);
         console.log(res);
       })
       .catch((err) => console.log(err));
@@ -69,7 +73,9 @@ function App() {
           getFaq={getFaq}
         />
       </Route>
-      <Route path={path.answers}>inf</Route>
+      <Route path={path.answers}>
+        <QuestionInfo className="app__question-info" question={question} answers={answers} />
+      </Route>
     </Switch>
   );
 }

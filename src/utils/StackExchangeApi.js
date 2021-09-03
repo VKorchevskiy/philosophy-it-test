@@ -27,11 +27,11 @@ class StackExchangeApi {
 
   getAnswers = (questionId) =>
     fetch(
-      `${this.baseUrl}/2.3/questions/${questionId}/answers?key=${optionsStackExchangeApi.key}&site=${optionsStackExchangeApi.site}`,
+      `${this.baseUrl}/2.3/questions/${questionId}/answers?key=${optionsStackExchangeApi.key}&site=${optionsStackExchangeApi.site}&filter=withbody`,
       {
         headers: { ...this.headers },
         method: "GET",
-      }
+      },
     ).then(checkResponse);
 
   getFaq = (tag) =>

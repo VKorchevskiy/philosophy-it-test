@@ -19,8 +19,8 @@
   align-content: flex-start;
 }
 
-*,
+/* *,
 *::before,
 *::after {
   outline: 1px solid red;
-}
+} */

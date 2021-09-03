@@ -29,16 +29,19 @@ function SearchResult({
             key={question.question_id}
             className="search-result__rows search-result__rows_content"
           >
+
             <td
               className="search-result__first-column search-result__first-column_content"
               onClick={() => getUserQuestions(question.owner.user_id)}
             >
               {question.owner.display_name}
             </td>
+
             <td
               className="search-result__second-column search-result__second-column_content"
-              onClick={() => getAnswers(question.question_id)}
+              onClick={() => getAnswers({question: question.title, questionId: question.question_id})}
             >{`(${question.answer_count}): ${question.title}`}</td>
+
             <td className="search-result__therd-column search-result__therd-column_content">
               {question.tags.map((tag) => (
                 <span className='search-result__tag' key={tag} onClick={() => getFaq(tag)}>
@@ -46,6 +49,7 @@ function SearchResult({
                 </span>
               ))}
             </td>
+
           </tr>
         ))}
       </tbody>
