@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     margin-left: 30px;
+    align-items: flex-start;
 }
 
 .result-window:last-of-type {
