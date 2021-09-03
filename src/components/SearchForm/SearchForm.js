@@ -15,7 +15,7 @@ function SearchForm({ className, onSubmit }) {
     setErrors,
     isValid,
     setIsValid,
-    resetForm,
+    resetForm
   } = useFormWithValidation();
 
   useEffect(() => {
@@ -36,7 +36,7 @@ function SearchForm({ className, onSubmit }) {
   return (
     <form className={`search-form ${className}`.trim()} onSubmit={handleSubmit}>
       <Input
-        className="search__input"
+        className="search-form__input"
         type="text"
         name="search"
         placeholder="Введите вопрос"
@@ -44,7 +44,7 @@ function SearchForm({ className, onSubmit }) {
         onChange={handleChange}
       />
       <SubmitButton
-        className=""
+        className="search-form__submit-button"
         type="submit"
         name="search"
         value="Search"
@@ -52,9 +52,10 @@ function SearchForm({ className, onSubmit }) {
       />
       <InfoMessage
         className={`search-form__info-message ${
-          isValid ? "search-form__info-message_disabled" : ""
+          errors.search ? "" : "search-form__info-message_disabled"
         }`.trim()}
         message={`${errors.search || ""}`}
+        isValid={isValid}
       />
     </form>
   );

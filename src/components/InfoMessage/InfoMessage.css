@@ -1,0 +1,12 @@
+.info-message {
+  margin: 0;
+  padding: 0;
+}
+
+.info-message_active {
+  display: flex;
+}
+
+.info-message_disable {
+  display: none;
+}
