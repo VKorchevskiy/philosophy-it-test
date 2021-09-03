@@ -40,7 +40,7 @@ function App() {
       .getAnswers(questionId)
       .then((res) => {
         history.push(path.answers);
-        setAnswers(res)
+        setAnswers(res);
         console.log(res);
       })
       .catch((err) => console.log(err));
@@ -62,6 +62,7 @@ function App() {
       </Route>
       <Route path={path.searchResult}>
         <SearchResult
+          className="app__search-result"
           questions={questions}
           getUserQuestions={getUserQuestions}
           getAnswers={getAnswers}
