@@ -4,6 +4,7 @@ import { Route, Switch, useHistory } from "react-router-dom";
 
 import { stackExchangeApi } from "../../utils/StackExchangeApi";
 import { path } from "../../utils/constants";
+import { convertQuestions } from "../../utils/utils";
 
 import SearchForm from "../SearchForm/SearchForm";
 import QuestionInfo from "../QuestionInfo/QuestionInfo";
@@ -21,18 +22,19 @@ function App() {
     stackExchangeApi
       .getQuestions(search)
       .then((res) => {
-        setQuestions(res.items);
+        setQuestions(convertQuestions(res.items));
         history.push(path.searchResult);
       })
+      .then(console.log(questions))
       .catch((err) => console.log(err));
 
   const getUserQuestions = (userId) =>
     stackExchangeApi
       .getUserQuestions(userId)
       .then((res) => {
-        setPreviewInfo(res)
-        console.log(res);
+        setPreviewInfo(convertQuestions(res.items));
       })
+      .then(console.log(previewInfo))
       .catch((err) => console.log(err));
 
   const getAnswers = ({ question, questionId }) =>
@@ -42,7 +44,6 @@ function App() {
         setAnswers(res);
         setQuestion(question);
         history.push(path.answers);
-        console.log(res);
       })
       .catch((err) => console.log(err));
 
@@ -50,9 +51,9 @@ function App() {
     stackExchangeApi
       .getFaq(tag)
       .then((res) => {
-        setPreviewInfo(res)
-        console.log(res);
+        setPreviewInfo(convertQuestions(res.items));
       })
+      .then(console.log(previewInfo))
       .catch((err) => console.log(err));
 
   return (
@@ -71,7 +72,11 @@ function App() {
         />
       </Route>
       <Route path={path.answers}>
-        <QuestionInfo className="app__question-info" question={question} answers={answers} />
+        <QuestionInfo
+          className="app__question-info"
+          question={question}
+          answers={answers}
+        />
       </Route>
     </Switch>
   );

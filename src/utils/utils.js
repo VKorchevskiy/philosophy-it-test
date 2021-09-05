@@ -7,3 +7,16 @@ export const checkResponse = (res) => {
     return Promise.reject(error);
   }
 };
+
+export const convertQuestions = (questions) =>
+  questions.map((question) => {
+    const newQuestion = {
+      id: question.question_id,
+      ownerId: question.owner.user_id,
+      ownerName: question.owner.display_name,
+      title: question.title,
+      answerCount: question.answer_count,
+      tags: question.tags,
+    };
+    return newQuestion;
+  });

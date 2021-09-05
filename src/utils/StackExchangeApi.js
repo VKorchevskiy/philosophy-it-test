@@ -46,5 +46,5 @@ class StackExchangeApi {
 
 export const stackExchangeApi = new StackExchangeApi(
   optionsStackExchangeApi,
-  headers
+  headers,
 );
