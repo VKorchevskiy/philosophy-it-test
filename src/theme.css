@@ -1,0 +1,11 @@
+:root {
+    --bg-color: #060f18;
+    --text-color: #808080;
+    --input-bg-color: #0a192b;
+    --input-color: #b4ceee;
+    --column-title-bg-color: rgb(39, 4, 2);
+    --column-content-bg-color: rgb(1, 16, 4);
+    --button-color: #3fa078;
+    --button-color-hover: #15355c;
+    --button-color-disabled: gray;
+}

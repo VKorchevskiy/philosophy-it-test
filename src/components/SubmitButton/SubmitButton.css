@@ -1,9 +1,11 @@
+@import "../../theme.css";
+
 .submit-button {
   margin: 0;
   padding: 0 5px 0;
   border: none;
   cursor: pointer;
-  background-color: #3fa078;
+  background-color: var(--button-color);
   transition: opacity 0.3s linear 0s;
   font-size: 12px;
   line-height: 17px;
@@ -14,11 +16,11 @@
 }
 
 .submit-button:hover:active {
-  background-color: #15355c;
+  background-color: var(--button-color-hover);
 }
 
 .submit-button:disabled {
-  background-color: gray;
+  background-color: var(--button-color-disabled);
 }
 
 .submit-button:disabled:hover {

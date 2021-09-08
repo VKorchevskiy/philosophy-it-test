@@ -35,14 +35,14 @@
 }
 
 .search-result__first-column_title {
-  background-color: rgb(39, 4, 2);
+  background-color: var(--column-title-bg-color);
 }
 
 .search-result__first-column_content {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(1, 16, 4);
+  background-color: var(--column-content-bg-color);
 }
 
 .search-result__second-column {
@@ -50,14 +50,14 @@
 }
 
 .search-result__second-column_title {
-  background-color: rgb(39, 4, 2);
+  background-color: var(--column-title-bg-color);
 }
 
 .search-result__second-column_content {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: rgb(1, 16, 4);
+  background-color: var(--column-content-bg-color);
 }
 
 .search-result__therd-column {
@@ -65,7 +65,7 @@
 }
 
 .search-result__therd-column_title {
-  background-color: rgb(39, 4, 2);
+  background-color: var(--column-title-bg-color);
 }
 
 .search-result__therd-column_content {
@@ -74,7 +74,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: rgb(1, 16, 4);
+  background-color: var(--column-content-bg-color);
 }
 
 .search-result__content {

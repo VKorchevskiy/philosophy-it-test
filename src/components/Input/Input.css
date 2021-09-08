@@ -1,11 +1,13 @@
+@import "../../theme.css";
+
 .input {
     margin: 0;
     padding: 0;
-    background: #0a192b;
+    background: var(--input-bg-color);
     font-weight: 400;
     font-size: 11px;
     line-height: 17px;
-    color: #b4ceee;
+    color: var(--input-color);
     border: none;
 }
 
