@@ -45,7 +45,7 @@ function SearchForm({ className, onSubmit }) {
         className="search-form__submit-button"
         type="submit"
         name="search"
-        value="Search"
+        value="Искать"
         isValid={isValid}
       />
       <InfoMessage
