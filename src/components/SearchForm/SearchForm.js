@@ -9,10 +9,8 @@ import { useFormWithValidation } from "../../hooks/useFormWithValidation";
 function SearchForm({ className, onSubmit }) {
   const {
     values,
-    setValues,
     handleChange,
     errors,
-    setErrors,
     isValid,
     setIsValid,
     resetForm
