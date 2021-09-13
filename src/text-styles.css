@@ -1,0 +1,42 @@
+.input-text {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 17px;
+}
+
+.button-text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.table-title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.table-content {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.question-title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.answere {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .input-text {
+    font-size: 13px;
+    line-height: 17px;
+  }
+}

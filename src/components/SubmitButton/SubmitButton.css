@@ -7,8 +7,6 @@
   cursor: pointer;
   background-color: var(--button-color);
   transition: opacity 0.3s linear 0s;
-  font-size: 12px;
-  line-height: 17px;
 }
 
 .submit-button:hover {

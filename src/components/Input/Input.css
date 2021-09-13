@@ -1,19 +1,9 @@
 @import "../../theme.css";
 
 .input {
-    margin: 0;
-    padding: 0;
-    background: var(--input-bg-color);
-    font-weight: 400;
-    font-size: 11px;
-    line-height: 17px;
-    color: var(--input-color);
-    border: none;
-}
-
-@media screen and (min-width: 768px) {
-    .input {
-        font-size: 13px;
-        line-height: 17px;
-    }
+  margin: 0;
+  padding: 0;
+  background: var(--input-bg-color);
+  color: var(--input-color);
+  border: none;
 }

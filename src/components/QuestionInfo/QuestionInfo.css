@@ -1,12 +1,27 @@
+@import '../../theme.css';
+
 .question-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .question-info__answers {
-    align-self: start;
-    margin: 50px;
+  align-self: start;
+  margin: 50px;
+}
+
+.question-title {
+  margin: 0 0 30px;
+  padding: 0;
+}
+
+.answere {
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--abswere-border);
+  padding: 15px;
+  margin: 15px;
 }

@@ -4,7 +4,7 @@ import React from "react";
 function Input({ className, type, name, placeholder, value, onChange }) {
   return (
     <input
-      className={`input ${className}`.trim()}
+      className={`input ${className}`.trim() + ' input-text'}
       type={type}
       name={name}
       id={name}

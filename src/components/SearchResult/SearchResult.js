@@ -11,7 +11,7 @@ function SearchResult({
   return (
     <table className={`search-result ${className || ''}`.trim()}>
       <thead className="search-result__title">
-        <tr className="search-result__rows search-result__rows_title">
+        <tr className="search-result__rows search-result__rows_title table-title">
           <td className="search-result__first-column search-result__first-column_title">
             Автор
           </td>
@@ -23,7 +23,7 @@ function SearchResult({
           </td>
         </tr>
       </thead>
-      <tbody className="search-result__content">
+      <tbody className="search-result__content table-content">
         {questions.map((question) => (
           <tr
             key={question.question_id}
